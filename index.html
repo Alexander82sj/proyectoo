@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoMax Tuning | Agencia de Vehículos</title>
+
+    <link rel="stylesheet" href="./dise.css">
+    <script src="./index.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header class="cabecera">
+        <div class="ancho barra">
+
+            <a href="#inicio" class="logo">
+                AUTO<span>MAX</span>
+                <small>TUNING GARAGE</small>
+            </a>
+
+            <nav aria-label="Menú principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#inventario">Inventario</a>
+                <a href="#registro" class="nav-destacado">
+                    + Registrar
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PORTADA -->
+
+        <section class="hero" id="inicio" aria-label="Vehículo destacado">
+
+            <img
+                id="heroImagen"
+                src="./img/mustang-gt500.jpg"
+                alt="Mustang naranja modificado"
+            >
+
+            <div class="hero-sombra"></div>
+
+            <div class="ancho hero-contenido">
+
+                <p class="etiqueta">
+                    POTENCIA • ESTILO • PERSONALIZACIÓN
+                </p>
+
+                <h1>
+                    NO ES SOLO UN AUTO.
+                    <br>
+                    <span>ES TU ESTILO.</span>
+                </h1>
+
+                <p>
+                    AutoMax Tuning: vehículos modificados,
+                    deportivos y proyectos exclusivos.
+                </p>
+
+                <div class="hero-botones">
+
+                    <a href="#inventario" class="boton primario">
+                        Ver inventario ↗
+                    </a>
+
+                    <a href="#registro" class="boton secundario">
+                        Registrar vehículo
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- INVENTARIO EN TARJETAS -->
+
+        <section class="fondo-seccion seccion" id="inventario">
+
+            <div class="ancho">
+
+                <div class="titulo-con-boton">
+
+                    <div>
+
+                        <p class="etiqueta">
+                            GESTIÓN EN TIEMPO REAL
+                        </p>
+
+                        <h2>
+                            Inventario <span>tuning</span>
+                        </h2>
+
+                    </div>
+
+                    <a class="boton primario" href="#registro">
+                        + Nuevo vehículo
+                    </a>
+
+                </div>
+
+
+                <!-- BUSCADOR -->
+
+                <div class="filtros">
+
+                    <input
+                        id="buscar"
+                        type="search"
+                        placeholder="Buscar por código, marca o modelo..."
+                        aria-label="Buscar vehículo"
+                    >
+
+                </div>
+
+
+                <p id="contadorResultados" class="contador">
+                    0 vehículos encontrados
+                </p>
+
+
+                <!-- CONTENEDOR DE TARJETAS -->
+
+                <div id="contenedorTarjetas" class="grid-tarjetas">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMULARIO DE REGISTRO / EDICIÓN -->
+
+        <section class="ancho seccion" id="registro">
+
+            <p class="etiqueta">
+                PANEL DE ADMINISTRACIÓN
+            </p>
+
+            <h2 id="tituloFormulario">
+                Registrar <span>vehículo</span>
+            </h2>
+
+            <p class="subtitulo">
+                Completa los campos requeridos para guardar
+                un vehículo y subir su fotografía.
+            </p>
+
+
+            <form id="formulario" class="formulario">
+
+                <div class="campos">
+
+                    <div class="campo">
+                        <label for="codigo">Código del vehículo *</label>
+                        <input
+                            id="codigo"
+                            type="text"
+                            maxlength="30"
+                            placeholder="TUN-001"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="marca">Marca *</label>
+                        <input
+                            id="marca"
+                            type="text"
+                            maxlength="50"
+                            placeholder="Ford"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="modelo">Modelo *</label>
+                        <input
+                            id="modelo"
+                            type="text"
+                            maxlength="60"
+                            placeholder="Mustang GT500"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="anio">Año *</label>
+                        <input
+                            id="anio"
+                            type="number"
+                            min="2000"
+                            placeholder="2025"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="color">Color *</label>
+                        <input
+                            id="color"
+                            type="text"
+                            maxlength="40"
+                            placeholder="Naranja"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="combustible">Tipo de combustible *</label>
+                        <select id="combustible" required>
+                            <option value="">Seleccionar combustible</option>
+                            <option value="Gasolina">Gasolina</option>
+                            <option value="Diésel">Diésel</option>
+                            <option value="Eléctrico">Eléctrico</option>
+                            <option value="Híbrido">Híbrido</option>
+                        </select>
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="precio">Precio (RD$) *</label>
+                        <input
+                            id="precio"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="2450000"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="cantidad">Cantidad disponible *</label>
+                        <input
+                            id="cantidad"
+                            type="number"
+                            min="0"
+                            step="1"
+                            placeholder="2"
+                            required
+                        >
+                    </div>
+
+
+                    <!-- CAMPO PARA SUBIR LA FOTO -->
+                    <div class="campo campo-completo">
+                        <label for="fotoVehiculo">Fotografía del vehículo *</label>
+                        <input
+                            id="fotoVehiculo"
+                            type="file"
+                            accept="image/*"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="campo campo-completo">
+                        <label for="descripcion">
+                            Descripción y modificaciones tuning *
+                        </label>
+                        <textarea
+                            id="descripcion"
+                            rows="4"
+                            maxlength="1000"
+                            placeholder="Kit aerodinámico, suspensión deportiva, llantas..."
+                            required
+                        ></textarea>
+                    </div>
+
+                </div>
+
+
+                <div class="pie-formulario">
+
+                    <p>
+                        La información y la imagen se guardan en este
+                        navegador mediante <b>LocalStorage</b>.
+                    </p>
+
+                    <div class="acciones-formulario">
+
+                        <button
+                            type="button"
+                            id="btnCancelar"
+                            class="boton secundario"
+                            hidden>
+                            Cancelar edición
+                        </button>
+
+                        <button
+                            type="submit"
+                            id="btnGuardar"
+                            class="boton primario">
+                            Registrar vehículo ↗
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- NOTIFICACIONES -->
+
+    <div
+        id="mensaje"
+        class="mensaje"
+        role="status"
+        aria-live="polite">
+    </div>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="pie-pagina">
+
+        <div class="ancho">
+
+            <strong>
+                AUTO<span>MAX</span> TUNING
+            </strong>
+
+            <p>
+                Proyecto desarrollado con HTML5, CSS3,
+                JavaScript y LocalStorage.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
